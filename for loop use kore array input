@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+    int arr[5] ;
+    
+    for(int index=0;index<5;index++){
+       
+    printf( "arr %d=", index);
+    scanf("%d",&arr[index]);}
+    
+    for(int index=0;index<5;index++) {
+    printf( "%d\n", arr[index]); }
+    return 0;
+}
