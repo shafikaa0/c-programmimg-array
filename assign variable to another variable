@@ -1,0 +1,9 @@
+#include <stdio.h>
+int main() {
+    int first_value=10394029;
+    printf("%d\n",first_value);
+    
+    int second_value=first_value;
+    printf("%d\n",second_value);
+    return 0;
+}
