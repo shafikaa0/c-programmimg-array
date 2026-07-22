@@ -1,0 +1,19 @@
+char type variable
+
+#include <stdio.h>
+int main() {
+    char character='e' ;
+    printf( "%c\n", character);
+    
+    return 0;
+}
+
+char type variable use kore int man ber kora
+
+#include <stdio.h>
+int main() {
+    char character='e' ;
+    printf( "%c\n", character);
+    printf( "%d\n", character);
+    return 0;
+}
