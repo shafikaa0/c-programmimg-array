@@ -1,0 +1,38 @@
+#include<stdio.h> 
+int main() {
+    int a, b; 
+    printf("Enter the size: \n");
+    scanf("%d", &a);
+
+    int n[a]; 
+    printf("Enter the number of elements: \n");
+    scanf("%d", &b);
+
+    
+    if (a<b) {
+        printf("Error: \n");
+        return 1; 
+    }
+
+    printf("Enter elements: \n");
+    for (int i = 0; i < b; i++) {
+        scanf("%d", &n[i]);
+    }
+    int pos;
+    printf("Enter the even index u want to delete: \n");
+    scanf("%d", &pos);
+if(pos<0||pos>b||pos%2!=0){    
+printf("cannot delete");    
+ return 0;}   
+for(int i=pos;i<b;i++)
+{n[i]=n[i+1];}
+b--;
+    printf("Array elements are: ");
+    for (int i = 0; i < b; i++) {
+        
+        printf("%d ", n[i]);
+    }
+
+    
+    return 0; 
+}
