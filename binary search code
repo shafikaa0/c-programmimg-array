@@ -1,0 +1,36 @@
+#include <stdio.h>
+int main() {
+    int size,num_of_element;
+    printf("Enter the size: \n");
+    scanf("%d",&size);
+    int arr[size];
+    printf("Enter the num of elements: \n");
+    scanf("%d",&num_of_element);
+printf("Enter the sorted elements: \n");
+for(int i=0;i<num_of_element;i++){
+scanf("%d",&arr[i]); }
+int key;
+    printf("Enter the key u want to search: \n");
+    scanf("%d",&key);    
+int left=0;
+int right=num_of_element+1;
+int result=-1;
+while(left<=right) {
+int mid=left+(right-left)/2;
+
+if(arr[mid]==key){
+result=mid;
+break;
+}
+else if(arr[mid]<key){
+left=mid+1;}
+else{
+    right=mid-1;
+} }
+if(result!=-1)     {
+    printf("The key is in = %d index\n",result);
+}
+else{
+printf("the key is not found\n");}
+    return 0;
+}
