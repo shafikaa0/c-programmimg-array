@@ -1,0 +1,34 @@
+#include <stdio.h>
+int main() {
+    int size,element_num;
+    printf("Enter the size: ");
+    scanf("%d",&size);
+    
+int Arr[size+1];
+    printf("Enter the num of elements: ");
+    scanf("%d",&element_num);
+    
+    printf("Enter the elements: ");
+    for(int i=0;i<element_num;i++){
+        scanf("%d",&Arr[i]);
+    }
+    
+    int key;
+    printf("Enter the element u want to search: ");
+    scanf("%d",&key);
+    
+
+    int k=0;
+    Arr[k] = key;
+    while(Arr[k] != key) {
+        
+        k++;
+    }
+    if(k==0) {
+        printf("key not found");
+    }
+    else{
+        printf("key is in: %d index",k);
+    }
+    return 0;
+}
