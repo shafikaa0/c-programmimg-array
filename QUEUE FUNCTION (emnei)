@@ -1,0 +1,85 @@
+#include<stdio.h>
+#include<stdlib.h>
+int queue[100];
+int rear=-1;
+int front=-1;
+int size=0;
+
+void enqueue() {
+    if(rear==size-1) 
+    printf("overflow\n");
+    else {
+        int value;
+        if(front==-1)
+        front=0;
+        printf("enter value to enqueue  ");
+        scanf("%d",&value);
+    rear=rear+1;
+    queue[rear]=value;       
+    }
+}
+
+void dequeue() {
+    if(front==-1) 
+    printf("underflow\n");
+    else {
+        
+        printf("value dequeued %d\n",queue[front]);
+        front=front+1;   }}
+
+void display() {
+    if(front==-1) 
+    printf("underflow\n");
+    else 
+    printf("the queue is\n");
+    for(int i=front;i<=rear;i++) {
+        printf("%d\n",queue[i]);
+    }
+}
+
+void displayfront() {
+    if(front==-1) 
+    printf("underflow\n");
+    else 
+    printf("the front is %d\n",queue[front]);
+    
+}
+
+int main () {
+    int choice;
+    printf("enter size\n");
+    scanf("%d",&size) ;
+
+    while(1){
+        printf("the operations are 1.enq 2.dq 3.display f 4.display \nchoose one\n");
+        scanf("%d",&choice);
+        
+
+        switch (choice) {
+            case 1:
+                
+                enqueue() ;
+                break;
+
+            case 2:
+                dequeue();
+                break;
+
+            case 3:
+                displayfront();
+                break;
+
+            case 4:
+                display();
+                break;
+
+            case 5:
+                printf("Exiting program.\n");
+                break;
+
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+}
+
