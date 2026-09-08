@@ -1,0 +1,162 @@
+Linked list to store and print roll number, name and age of 3 students.
+
+
+#include <stdio.h>
+struct stud 
+    {
+        int roll;
+        char name[30];
+        int age;
+     struct stud*next;
+    } n1,n2,n3;
+
+int main () {
+    struct stud*p;
+    scanf("%d %s %d", &n1.roll,n1.name,&n1.age);
+    scanf("%d %s %d", &n2.roll,n2.name,&n2.age);
+    scanf("%d %s %d", &n3.roll,n3.name,&n3.age);
+    n1.next=&n2;
+    n2.next=&n3;
+    n3.next=NULL;
+
+    p=&n1;
+    while(p!=NULL) {
+        printf("\n%d %s %d", p->roll,p->name,p->age);
+        p=p->next;
+    }
+}
+
+
+
+C-program to store 10 values on a linked list reading the data from keyboard.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+} *header;
+
+void createList(int n);
+
+int main()
+{
+    int n;
+
+    printf("Enter the total number of nodes: ");
+    scanf("%d", &n);
+
+    createList(n);
+
+    return 0;
+}
+
+void createList(int n)
+{
+    struct node *newNode, *temp;
+    int data, i;
+
+    newNode = (struct node *)malloc(sizeof(struct node));
+
+    if (newNode == NULL)
+    {
+        printf("Unable to allocate memory.");
+    }
+    else
+    {
+        printf("Enter the data of node 1: ");
+        scanf("%d", &data);
+
+        newNode->data = data;
+        newNode->next = NULL;
+
+        header = newNode;
+        temp = newNode;
+
+        for (i = 2; i <= n; i++)
+        {
+            newNode = (struct node *)malloc(sizeof(struct node));
+
+            if (newNode == NULL)
+            {
+                printf("Unable to allocate memory.");
+                break;
+            }
+            else
+            {
+                printf("Enter the data of node %d: ", i);
+                scanf("%d", &data);
+
+                newNode->data = data;
+                newNode->next = NULL;
+
+                temp->next = newNode;
+                temp = temp->next;
+            }
+        }
+    }
+}
+
+
+C-program to copy an array to a single linked list.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+};
+
+int main()
+{
+    struct node *header, *newNode, *temp;
+    int i, n, a[100];
+
+    printf("Enter the total number of data: ");
+    scanf("%d", &n);
+
+    for (i = 0; i < n; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    newNode = (struct node *)malloc(sizeof(struct node));
+
+    if (newNode == NULL)
+    {
+        printf("Unable to allocate memory.");
+    }
+    else
+    {
+        newNode->data = a[0];
+        newNode->next = NULL;
+
+        header = newNode;
+        temp = header;
+
+        for (i = 1; i < n; i++)
+        {
+            newNode = (struct node *)malloc(sizeof(struct node));
+
+            if (newNode == NULL)
+            {
+                printf("Unable to allocate memory.");
+                break;
+            }
+            else
+            {
+                newNode->data = a[i];
+                newNode->next = NULL;
+
+                temp->next = newNode;
+                temp = temp->next;
+            }
+        }
+    }
+
+    return 0;
+}
